@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <record id="invoice_action" model="ir.actions.act_window">
+        <field name="name">Invoices</field>
+        <field name="res_model">sht.invoice</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>
+                Add New Record
+            </p>
+        </field>
+    </record>
+
+        <record id="sht_invoice_view_tree" model="ir.ui.view">
+            <field name="name">sht.invoice.view.tree</field>
+            <field name="model">sht.invoice</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice">
+                    <field name="name" />
+                    
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="sht_invoice_view_form" model="ir.ui.view">
+            <field name="name">sht.invoice.view.form</field>
+            <field name="model">sht.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Invoice">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="date" />
+                            <field name="invoice_no" />
+                            <field name="order_no" />
+                            <field name="ref" />
+                            <field name="terms" />
+                            <field name="vender_code" />
+                            <field name="job_id" />
+                            <field name="attn" />
+                            <!-- <field name="sub_total" /> -->
+                        </group>
+                        <notebook>
+                            <page name="item_ids" string="Items">
+                                <field name="item_ids" >
+                                    <tree>
+                                        <field name="name" />
+                                        <!-- <field name="item" /> -->
+                                        <!-- <field name="desc" /> -->
+                                        <field name="qut" />
+                                        <field name="unit_price" />
+                                        <field name="amount" />
+                                    </tree>
+                                <form>
+                                    <group>
+                                        <field name="name" />
+                                        <!-- <field name="item" /> -->
+                                        <!-- <field name="desc" /> -->
+                                        <field name="qut" />
+                                        <field name="unit_price" />
+                                        <field name="amount" />
+                                    </group>
+                                </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    <menuitem
+            id="sht_invoice_menu"
+            name="Invoice"
+            action="invoice_action"
+            groups="base.group_user"
+            parent="sht_invoice_main_menu"
+            sequence="2"/>
+</odoo>

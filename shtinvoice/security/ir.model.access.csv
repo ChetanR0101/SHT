@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+shtinvoice.access_sht_delivery,access_sht_delivery,shtinvoice.model_sht_delivery,base.group_user,1,1,1,1
+shtinvoice.access_sht_product,access_sht_product,shtinvoice.model_sht_product,base.group_user,1,1,1,1
+shtinvoice.access_sht_order,access_sht_order,shtinvoice.model_sht_order,base.group_user,1,1,1,1
+shtinvoice.access_sht_invoice,access_sht_invoice,shtinvoice.model_sht_invoice,base.group_user,1,1,1,1
+shtinvoice.access_sht_co_invoice,access_sht_co_invoice,shtinvoice.model_sht_co_invoice,base.group_user,1,1,1,1
